@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侧边栏子菜单</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body id="body-pd">
+    <div class="l-navbar" id="navbar">
+        <nav class="nav">
+            <div>
+                <div class="nav_brand">
+                    <!-- <ion-icon name="menu-outline" class="nav_toggle" id="nav_toggle"></ion-icon> -->
+                    <ion-icon name="menu-outline" class="nav_toggle" id="nav-toggle"></ion-icon>
+
+                    <a href="#" class="nav_logo">仵老大科技</a>
+                </div>
+                <div class="nav_list">
+                    <a href="#" class="nav_link active">
+                        <ion-icon name="home-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name">主页</span>
+                    </a>
+                    <a href="#" class="nav_link">
+                        <ion-icon name="chatbubbles-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name">信息</span>
+                    </a>
+                    <div class="nav_link collapse">
+                        <ion-icon name="folder-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name">项目</span>
+                        <ion-icon name="chevron-down-outline" class="collapse__link" ></ion-icon>
+                        <ul class="collapse_menu">
+                            <a href="#" class="collapse__sublink">aaaa</a>
+                            <a href="#" class="collapse__sublink">bbbb</a>
+                            <a href="#" class="collapse__sublink">cccc</a>
+                        </ul>
+                    </div>
+                    <a href="#" class="nav_link">
+                        <ion-icon name="pie-chart-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name">统计</span>
+                    </a>
+                    <div class="nav_link collapse">
+                        <ion-icon name="people-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name">团队</span>
+                        <ion-icon name="chevron-down-outline" class="collapse__link" ></ion-icon>
+                        <ul class="collapse_menu">
+                            <a href="#" class="collapse__sublink">aaaa</a>
+                            <a href="#" class="collapse__sublink">bbbb</a>
+                            <a href="#" class="collapse__sublink">cccc</a>
+                        </ul>
+                    </div>
+                    <a href="#" class="nav_link">
+                        <ion-icon name="settings-outline" class="nav_icon" ></ion-icon>
+                        <span class="nav_name">设置</span>
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="nav_link">
+                <ion-icon name="log-out-outline" class="nav_icon" ></ion-icon>
+                <span class="nav_name">退出登陆</span>
+            </a>
+        </nav>
+    </div>
+
+    <h1>内容</h1>
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

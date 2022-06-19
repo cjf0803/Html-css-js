@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清明上河图</title>
+    <link rel="stylesheet" href="../css/qmsht.css">
+</head>
+<body>
+    <!-- 微信搜索公众号  笑谈科技  回复  031903  -->
+
+    <div class="container">
+
+        <br>
+        <br>
+        <br>
+        <br> <br>
+        <br>
+                
+        <br>
+        <br>
+        <br>
+        <center><h2>清明上河图</h2></center>
+
+        <br>
+        <br>
+        <br>
+        <div class="wrap">
+            <img 
+            src="../images/river_handle_left.png" 
+            class="handle handle-left" 
+            alt="">
+            
+            <img 
+            src="../images/river_handle_right.png" 
+            class="handle handle-right" 
+            alt="">
+            <div class="river-view" id="river">
+                <div class="river-images grab">
+                    <img src="../images/01.jpeg" alt="01">
+                    <img src="../images/02.jpeg" alt="02">
+                    <img src="../images/03.jpeg" alt="03">
+                    <img src="../images/04.jpeg" alt="04">
+                    <img src="../images/05.jpeg" alt="05">
+                    <img src="../images/06.jpeg" alt="06">
+                    <img src="../images/07.jpeg" alt="07">
+                    <img src="../images/08.jpeg" alt="08">
+                    <img src="../images/09.jpeg" alt="09">
+                    <img src="../images/10.jpeg" alt="10">
+                    <img src="../images/11.jpeg" alt="11">
+                    <img src="../images/12.jpeg" alt="12">
+                    <img src="../images/13.jpeg" alt="13">
+                    <img src="../images/14.jpeg" alt="14">
+                    <img src="../images/15.jpeg" alt="15">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const river = document.getElementById("river");
+
+        const store = {
+            move : false
+        }
+        // mousedown 鼠标按下
+        river.addEventListener('mousedown',(e) => {
+            // 取消事件的默认动作。            
+            e.preventDefault();
+            store.move = true;
+            store.startX = e.pageX + river.scrollLeft;
+        }) 
+        // mousemove 移动鼠标
+        document.addEventListener("mousemove",(e) => {
+            // 取消事件的默认动作。            
+            e.preventDefault();
+            if(store.move){
+                river.scrollLeft = store.startX - e.pageX;
+            }
+        })
+        document.addEventListener("mouseup",(e) => {
+            // 取消事件的默认动作。            
+            e.preventDefault();
+            store.move = false;
+        })
+
+    </script>
+
+</body>
+</html>

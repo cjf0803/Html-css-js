@@ -1,0 +1,113 @@
+/* 先引入字体 */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* 初始化 */
+*{
+    /* 标准盒子模型 */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* 使用字体 */
+    font-family: 'Open Sans', sans-serif ;
+    /* 100%的窗口高度 */
+    height: 100vh;
+}
+
+.slider-container{
+    /* 相对定位 */
+    position: relative;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-slide{
+    height: 100%;
+    width: 35%;
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 执行动画 让速度慢一点 */
+    transition: transform 0.5s ease-in-out;
+}
+
+.left-slide > div{
+    height: 100%;
+    width: 100%;
+    /* 弹性布局 */
+    display: flex;
+    /* 按照列排序 */
+    flex-direction: column;
+    /* 水平+垂直居中 */
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.left-slide h1{
+    font-size: 40px;
+    /* 距离底部元素 */
+    margin-bottom: 10px;
+    margin-top: -30px;
+}
+
+/* 右边的 */
+.right-slide{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    /* 执行动画 让速度慢一点 */
+    transition: transform 0.5s ease-in-out;    
+}
+
+.right-slide > div{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+button{
+    background-color: #fff;
+    border: none;
+    color: #aaa;
+    /* 鼠标放上变小手 */
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+}
+
+button:hover{
+    color: #222;
+}
+
+button:focus{
+    outline: none;
+}
+
+.slider-container .action-buttons .down-button{
+    transform: translateX(-100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius:5px ;
+}
+
+.slider-container .action-buttons .up-button{
+    transform: translateY(-100%);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius:5px ;
+}
+
+.slider-container .action-buttons button{
+    /* 绝对定位 */
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    z-index: 100;
+}

@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(210, 210, 220);
+}
+.shell{
+    position: relative;
+    min-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    /* 设置3D变化 */
+    transform-style: preserve-3d;
+    /* 添加透视效果 */
+    perspective: 900px;
+}
+
+.shell .box{
+    position: relative;
+    width: 250px;
+    height: 350px;
+    transition: 0.3s;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    margin: 30px;
+    transform: rotateY(0deg);
+    transition-delay: .1s;
+    /* 圆角 */
+    border-radius: 5px;
+    /* 边框 */
+    border: #fff 5px solid;
+}
+
+/* 当鼠标所有卡片的父元素点shell上时
+所有卡片向Y轴翻转20度 */
+.shell:hover .box{
+    transform: rotateY(20deg);
+}
+
+/* 当鼠标悬浮当前卡片上时,当前卡片的翻转角度为0
+并放大1.25倍,加个阴影 */
+.shell .box:hover{
+    transform: rotateY(0deg) scale(1.25);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* 当鼠标悬浮在卡片上的时候,
+当前卡片后面的所有卡片全部翻转-20度 */
+.shell .box:hover~.box{
+    transform: translateY(-20deg);
+}
+
+.shell .box .image img{
+    width: 100%;
+}
+
+.shell .box .content{
+    position: absolute;
+    top: 0;
+    width: 90%;
+    height: 100%;
+    z-index: 1;
+    padding: 15px;
+}
+
+.shell .box .content h2{
+    color: rgb(210, 140, 140);
+    transition: 0.3s;
+    font-size: 20px;
+    transform: translateY(-100px);
+}
+
+.shell .box:hover .content h2{
+    transform: translateY(-15px);
+}
+
+.shell .box .content p {
+    color: rgb(0, 0, 0);
+    transition: 0.3s;
+    font-size: 14px;
+    transform: translateY(600px);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.shell .box:hover .content p{
+    transform: translateY(220px);
+}

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/* 初始化 */
+*{
+    box-sizing: border-box;
+}
+
+body{
+    /* 引入字体 */
+    font-family: 'Muli',sans-serif;
+    /* 弹性布局 水平 + 垂直居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 100%的窗口高度 */
+    height: 100vh;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+.panel{
+    /* 跟封面一样大小 */
+    background-size: cover;
+    /* 把封面图片居中 */
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    /* 边框圆角 */
+    border-radius: 50px;
+    color: #fff;
+    /* 鼠标放上变小手 */
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    /* 相对定位 */
+    position: relative;
+    -webkit-transition: all 700ms ease-in;
+}
+
+.panel h3{
+    font-size: 24px;
+    /* 绝对定位 */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width:480px){
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display: none;
+    }
+}

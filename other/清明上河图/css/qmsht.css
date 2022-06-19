@@ -1,0 +1,66 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+}
+
+.container{
+    margin: 50px;
+}
+
+.wrap{
+    /* 相对定位 */
+    position: relative;
+    width: 700px;
+    height: 230px;
+    background: burlywood;
+}
+
+/* 生成绝对定位的元素 */
+.handle{
+    position: absolute;
+    top: -20px;
+    z-index: 1;
+    /* 元素不对指针事件做出反应。 */
+    pointer-events: none;
+    /* css控制页面文字不能被选中 */
+    user-select: none;
+}
+
+.handle-left{
+    left: 0;
+}
+
+.handle-right{
+    right: 0;
+}
+
+.river-view{
+    width: 100%;
+    height: 100%;
+    /* 溢出隐藏 */
+    overflow: hidden;
+    /* 向div 元素添加阴影 */
+    box-shadow: 0px 3px 25px rgb(36, 30, 34 / 62%);
+}
+
+.river-images{
+    /* 弹性布局 */
+    display: flex;
+    width: 750px;
+}
+.grab{
+    /* 可拖动的手势。 */
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+}
+/* :active 选择器用于选择活动链接。
+当您在一个链接上点击时，它就会成为活动的（激活的）。 */
+.grab:active{
+    /* 鼠标形状变成“咸猪手”以及“抓奶手 */
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}

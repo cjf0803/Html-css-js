@@ -1,0 +1,116 @@
+*{
+    /* 初始化
+    设置标准 */
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+    width: 100vw;
+    /* 100%的窗口高度 */
+    height: 100vh;
+    /* background-color: aqua; */
+    background: url(./bg.jpg) no-repeat;
+    /* 背景大小 */
+    background-size: cover;
+    /* 弹性布局 水平加 垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-content{
+    /* 相对定位 */
+    position: relative;
+    width: 800px;
+    height:360px;
+    background: linear-gradient(to right,#1e9e7a, #3bc48d, #089cbd);
+    border-radius: 30px;
+    padding: 30px;
+    /* background: url(./12313.webp) no-repeat; */
+    /* background-size: cover; */
+    /* border-radius: 20px 0 0 20px; */
+}
+
+.banner-box{
+    /* 转为块级模块 */
+    display: inline-block;
+    width: 500px;
+    height: 100%;
+    background: url(./123.jpg) no-repeat;
+    background-size: cover;
+    border-radius: 20px 0 0 20px;
+}
+
+.login-box{
+    width: 330px;
+    height: 100%;
+    /* 绝对定位 */
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background-color: aqua; */
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-box>h1{
+    font-size: 36px;
+    margin: 60px 0;
+    color: #fff;
+}
+
+.login-box>input{
+    margin-bottom: 20px;
+    width: 200px;
+    height: 36px;
+    padding: 0 20px;
+    border-radius: 36px;
+    border: none;
+    /* 消除点进去出现的提示框 */
+    outline: none;
+    font-size: 18px;
+}
+
+.login-btn{
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    background-color:#811bc5;
+    border: none;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 18px;
+}
+
+@media screen and (max-width:900px){
+    .login-content{
+        margin: 0 30px;
+    }
+    .banner-box{
+        border-radius: 20px;
+    }
+    .login-box{
+        background-color: rgba(52, 0, 73, 0.5);
+    }
+}
+
+@media screen and (max-width:600px){
+    .content{
+        background: url(./12313.jpg) no-repeat center;
+    }
+    .login-content{
+        background-color: transparent;
+    }
+
+    .banner-box{
+        display: none;
+    }
+    .login-box{
+        position: initial;
+        margin: -40 auto;
+        background-color: transparent;
+    }
+}
